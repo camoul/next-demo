@@ -1,8 +1,22 @@
 {
+  "extends": ["config:recommended"],
   "additionalBranchPrefix": "renovate/",
-  "labels": ["dependencies", "PR: Review TODO", "Is it no QA", "PR: Auto release"],
-  "vulnerabilityAlerts": {
-    "labels": ["security"],
-    "automerge": true
-  }
+  "baseBranches": ["main"],
+  "labels": [
+    "dependencies",
+    "PR: Review TODO",
+    "Is it no QA",
+    "PR: Auto release"
+  ],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true
+    }
+  ],
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10,
+  "rangeStrategy": "bump",
+  "vulnerabilityAlerts": {"labels": ["security"], "automerge": true}
 }

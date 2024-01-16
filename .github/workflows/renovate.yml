@@ -1,16 +1,15 @@
 name: Renovate
 on:
   schedule:
-    # Action launched from Monday to Friday at 8:00 and 13:00
-    - cron: '0 8,13 * * 1-5'
+    - cron: '* * * * *'
 jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4.1.1
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v37.0.0
+        uses: renovatebot/github-action@v39.2.4
         with:
           configurationFile: ./.github/renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
