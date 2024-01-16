@@ -1,0 +1,8 @@
+{
+  "additionalBranchPrefix": "renovate/",
+  "labels": ["dependencies", "PR: Review TODO", "Is it no QA", "PR: Auto release"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "automerge": true
+  }
+}
